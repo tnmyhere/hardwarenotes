@@ -67,7 +67,6 @@ The following pins are used as mentioned in the challenge description,
 Using the provided data, we infer the following:
 1. Pin 10 (`LRCK`) and 11 (`BCK`) act as the output, this means that we must be in `master` mode.
 2. It is mentioned that when we receive 24 bit from pin 12 (`DOUT`), we get an active low (0) at pin 10 (`LRCK`). This would match with `Format 2` in the PDF. (as 24 on `DOUT`, flips `LRCK`)
-![[Pasted image 20241229041838.png]]
  
  3. So now, we look for `right justified, 24 bit` in table 4 to get the data formats. As it is mentioned that the data format is controlled by `FMT1` (1, in our case) and `FMT0` (0, in our case), we find the pin 17 as 0 (`FMT1`) and pin 18 as 1 (`FMT0`).
  4. As the supported sampling rates for the device ranges from 16-96 kHz, only the sampling frequency of `32 kHz` in Table 1 with system clock frequency of `512 fs` is allowable (since master mode does not allow `768 fs`). This means that the interface mode pins `MODE1` (pin 20) and `MODE0` (pin 19) are `0` and `1` respectively (according to Table 3).
@@ -80,7 +79,7 @@ R = 1/2π(10)(1*10^-6)
 R = 15.91 kΩ ~ 16 kΩ
 ```
 
-Hence we get the flag as `nite{17:0,18:1,19:1,20:0,16}
+Hence we get the flag as `nite{17:0,18:1,19:1,20:0,16}`
 
 **Learnt:** Reading datasheets, FCC IDs for products
 
