@@ -24,6 +24,6 @@ Thus answer is option 3. Note that the tap out is where the voltage divider calc
 
 Forgive me for the image resolution, but wanted to solve this through markup,
 
-![[hardware_test_q2.png]]
+![](/media/hardware_test_q2.png)
 
 ---
